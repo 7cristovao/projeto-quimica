@@ -1,0 +1,985 @@
+<!-- from ftp://www.ctan.org/tex-archive/macros/latex/contrib/mhchem/mhchem.pdf -->
+
+<head>
+  <!-- Load css file from shared location -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/paper/bootstrap.min.css" rel="stylesheet" integrity="sha384-awusxf8AUojygHf2+joICySzB780jVvQaVCAt1clU3QsyAitLGul28Qxb2r1e5g+" crossorigin="anonymous">
+
+  <!-- config and load chemistry extension for mathjax -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], displayMath: [ ['$$','$$'], ["\\[","\\]"] ], processEscapes: true },TeX: { extensions: ["mhchem.js"] } });
+  </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+  
+  <script>
+//     if(window.MathJax){
+//   MathJax.Ajax.config.path["a11y"] = "https://cdn.mathjax.org/mathjax/contrib/a11y";
+//   MathJax.Ajax.Require("[a11y]/accessibility-menu.js");
+// }
+  </script>
+  
+<!--     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script> -->
+</head>
+
+<body>
+  <div class="container">
+    <!--     <div class="row">
+      <div class="col-xs-4"><p>$$</p></div>
+<div class="col-xs-6"><p><code></code></p></div>
+      <div class="col-xs-2"><p></p></div>
+    </div> -->
+
+    <div class="container">
+      <h1>O pacote mhchem </h1>
+      <p>Clique com o botão direito nas equações à esquerda.</p>
+      <h2>Equações Químicas</h2>
+      <br>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{CO2 + C -> 2 CO}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{CO2 + C -> 2 CO}</code></p>
+        </div>
+
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-} $</p>
+        </div>
+        <div class="col-xs-6"><code>\ce{Hg^2+ ->[I-] HgI2
+->[I-] [Hg^{II}I4]^2-}
+</code></div>
+
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <h2>
+        Fórmulas Químicas</h2>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{H2O} $</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{H2O}
+          </code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{Sb2O3} $</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{Sb2O3}
+            </code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <h2>Cargas</h2>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{H+} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{H+}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{[Cr O4^2-]} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{CrO4^2-}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{[AgCl2]-} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>$\ce{[AgCl2]-}
+$</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{Y^99+} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{Y^99+}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{Y^{99+}} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{Y^{99+}}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <h2>Estados de Oxidação</h2>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{Fe^{II}Fe^{III}2O4}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{Fe^{II}Fe^{III}2O4}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <h2>Números Estequiométricos</h2>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{2H2O} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{2H2O}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{2 H2O} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{2 H2O}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{0.5H2O} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{0.5H2O}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{1/2H2O}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{1/2H2O}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{(1/2)H2O}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{(1/2)H2O}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{$n$H2O}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{$n$H2O}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <h2>Isótopos</h2>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{^{227}_{90}Th+}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{^{227}_{90}Th+}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{^227_90Th+} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{^227_90Th+}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{^{0}_{-1}n^{-}} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{^{0}_{-1}n^{-}}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{^0_-1n-} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{^0_-1n-}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{H{}^3HO}\\$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{H{}^3HO}\\</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{H^3HO} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{H^3HO}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <h2>Parentêse, Colchetes, Chaves</h2>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{(NH4)2S} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{(NH4)2S}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{[\{(X2)3\}2]^3+}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{[\{(X2)3\}2]^3+}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{CH4 + 2 $\left( \ce{O2 + 79/21 N2} \right)$} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{CH4 + 2 $\left( \ce{O2 + 79/21 N2} \right)$}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <h2>Estados de Agregação</h2>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{H2(aq)}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{H2(aq)}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{CO3^2-{}_{(aq)}}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{CO3^2-{}_{(aq)}}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{NaOH(aq,$\infty$)} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{NaOH(aq,$\infty$)}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <h2>Electrons não Pareados, Radicais
+      </h2>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{OCO^{.-}} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{OCO^{.-}}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{NO^{(2.)-}} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{NO^{(2.)-}}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <h2>Variáveis como x, n, 2n+1</h2>
+
+      <div class="row">
+
+        <div class="col-xs-4">
+          <p>$\ce{NO_x}$</p>
+        </div>
+
+        <div class="col-xs-6">
+          <p><code>\ce{NO_x}
+</code></p>
+        </div>
+
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{Fe^n+} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{Fe^n+}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-5">
+          <p>$\ce{x Na(NH4)HPO4 ->[\Delta] (NaPO3)_x + x NH3 ^ + x H2O}$
+          </p>
+        </div>
+        <div class="col-xs-5">
+          <p><code>\ce{x Na(NH4)HPO4 ->[\Delta] (NaPO3)_x + x NH3 ^ + x H2O}</code></p>
+        </div>
+        <div class="col-xs-1">
+          <p></p>
+        </div>
+      </div>
+
+      <h2>Caracteres Gregos</h2>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{\mu-Cl} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{\mu-Cl}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{[Pt(\eta^2-C2H4)Cl3]-} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{[Pt(\eta^2-C2H4)Cl3]-}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <h2>Adição de Compostos</h2>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{KCr(SO4)2*12H2O} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{KCr(SO4)2*12H2O}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{KCr(SO4)2.12H2O} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{KCr(SO4)2.12H2O}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{KCr(SO4)2 * 12 H2O} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{KCr(SO4)2 * 12 H2O}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <h2>Ligações</h2>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{C6H5-CHO} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{C6H5-CHO}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A-B=C#D}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A-B=C#D}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A\bond{-}B\bond{=}C\bond{#}D} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A\bond{-}B\bond{=}C\bond{#}D}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <!--         <div class="row">
+      <div class="col-xs-4"><p>$\ce{A\bond{1}B\bond{2}C\bond{3}D}$</p></div>
+<div class="col-xs-6"><p><code>\ce{A\bond{1}B\bond{2}C\bond{3}D}
+
+</code></p></div>
+      <div class="col-xs-2"><p></p></div>
+    </div>  -->
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A\bond{~}B\bond{~-}C}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A\bond{~}B\bond{~-}C}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A\bond{~--}B\bond{~=}C\bond{-~-}D} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A\bond{~--}B\bond{~=}C\bond{-~-}D}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A\bond{...}B\bond{....}C}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A\bond{...}B\bond{....}C}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A\bond{->}B\bond{
+            <-}C} $</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A\bond{->}B\bond{<-}C}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <h2>Setas de Reação</h2>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A -> B}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A -> B}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A
+            <- B} $</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A <- B}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A
+            <-> B}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A <-> B}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A
+            <--> B}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A <--> B}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A
+            <=> B} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A <=> B}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A
+            <=>> B} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A <=>> B}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A
+            <<=> B}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A <<=> B}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A ->[H2O] B}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A ->[H2O] B}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A ->[{text above}][{text below}] B}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A ->[{text above}][{text below}] B}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A ->[$x$][$x_i$] B}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A ->[$x$][$x_i$] B}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A ->[${x}$] B}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A ->[${x}$] B}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <h2>Operadores de Equações</h2>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A + B} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A + B}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A - B}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A - B}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A = B}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A = B}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A \pm B}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A \pm B}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <h2>Precipitação e Gás</h2>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{SO4^2- + Ba^2+ -> BaSO4 v}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{SO4^2- + Ba^2+ -> BaSO4 v}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{A v B (v) -> B ^ B (^)} $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{A v B (v) -> B ^ B (^)}
+</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <h2>Exemplos Adicionais</h2>
+
+      <div class="row">
+        <div class="col-xs-6">
+          <p>$\ce{Zn^2+
+            <=>[+ 2OH-][+ 2H+] $\underset{\text{amphoteres Hydroxid}}{\ce{Zn(OH)2 v}}$
+              <=>[+ 2OH-][+ 2H+] $\underset{\text{Hydroxozikat}}{\ce{[Zn(OH)4]^2-}}$ } $
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{Zn^2+
+<=>[+ 2OH-][+ 2H+]
+$\underset{\text{amphoteres Hydroxid}}{\ce{Zn(OH)2 v}}$
+<=>[+ 2OH-][+ 2H+]
+$\underset{\text{Hydroxozikat}}{\ce{[Zn(OH)4]^2-}}$
+}
+</code></p>
+        </div>
+        <!--       <div class="col-xs-2"><p></p></div> -->
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$K = \frac{[\ce{Hg^2+}][\ce{Hg}]}{[\ce{Hg2^2+}]}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p>
+            <code$K=\ frac{[\ce{Hg^2+}][\ce{Hg}]}{[\ce{Hg2^2+}]}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$K = \ce{\frac{[Hg^2+][Hg]}{[Hg2^2+]}}$</p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>K = \ce{\frac{[Hg^2+][Hg]}{[Hg2^2+]}}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\ce{Hg^2+ ->[I-] $\underset{\mathrm{red}}{\ce{HgI2}}$ ->[I-] $\underset{\mathrm{red}}{\ce{[Hg^{II}I4]^2-}}$ }$
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\ce{Hg^2+ ->[I-]
+$\underset{\mathrm{red}}{\ce{HgI2}}$
+->[I-]
+$\underset{\mathrm{red}}{\ce{[Hg^{II}I4]^2-}}$
+}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+      <h2>Ambientes de Equações</h2>
+      <h3>Equações de Alinhamento</h3>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>$\begin{align*} \ce{RNO2 &
+            <=>[+e] RNO2^{-.} \\ RNO2^{-.} &
+              <=>[+e] RNO2^2-} \end{align*}$
+          </p>
+        </div>
+        <div class="col-xs-6">
+          <p><code>\begin{align*}
+\ce{RNO2 &<=>[+e] RNO2^{-.} \\
+RNO2^{-.} &<=>[+e] RNO2^2-}
+\end{align*}</code></p>
+        </div>
+        <div class="col-xs-2">
+          <p></p>
+        </div>
+      </div>
+
+    </div>
+</body>
